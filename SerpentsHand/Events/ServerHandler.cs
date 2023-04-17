@@ -70,7 +70,7 @@ namespace SerpentsHand.Events
 
             if (shAlive && ((ciAlive && !config.SerpentsHandModifiers.ScpsWinWithChaos) || dclassAlive || mtfAlive || scientistsAlive))
             {
-                ev.IsAllowed = false;
+                ev.IsRoundEnded = false;
             }
             else if (shAlive && scpAlive && !mtfAlive && !dclassAlive && !scientistsAlive)
             {
@@ -79,14 +79,12 @@ namespace SerpentsHand.Events
                     if (!ciAlive)
                     {
                         ev.LeadingTeam = LeadingTeam.Anomalies;
-                        ev.IsAllowed = true;
                         ev.IsRoundEnded = true;
                     }
                 }
                 else
                 {
                     ev.LeadingTeam = LeadingTeam.Anomalies;
-                    ev.IsAllowed = true;
                     ev.IsRoundEnded = true;
                 }
             }
